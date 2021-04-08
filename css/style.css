@@ -26,6 +26,11 @@ nav li{
   padding-right:20px;
 }
 
+main{
+  padding: 0% 10%;  
+}
+
+
 /*
 nav{
   background-color: #FFFFFF;
@@ -36,9 +41,25 @@ nav{
 }
 */
 
+/*DESKTOP MENU*/
+.desktop_menu{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-align: right;
 
+}
 
-/* Style the navigation menu */
+.desktop_menu a{
+  padding-left: 10px;
+}
+
+.current{
+  text-decoration: underline;
+  color:#3054DD;
+  
+}
+
+/*MOBILE MENU*/
 .topnav {
   overflow: hidden;
   background-color: white;
@@ -114,7 +135,6 @@ h2{
   font-size: 1.5em;
   text-transform: uppercase;
   text-align: center;
-  padding-top: 30px;
 
 
 }
@@ -124,10 +144,9 @@ h2.intro{
   color: #000;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: 3em;
+  font-size: 1.5em;
   padding-bottom: 10px;
-
-
+  padding: top 40px;
 }
 
 div.intro{
@@ -141,16 +160,24 @@ h3{
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   text-align: center;
-
+  padding-bottom: 50px;
 }
 
 p{
-  padding-top: 15px;
   text-align: center;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+  padding: 0 10%;
 
   /*Req 3*/
+}
+
+.tired{
+  padding-bottom: 50px;
+}
+
+.me{
+  padding: 50px 10%;
 }
 
 
@@ -159,6 +186,7 @@ p{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 20px;
   width: 20%;
 }
 
@@ -174,6 +202,17 @@ a:hover{
   color: #3054DD;
 }
 
+h2 a{
+  font-family: 'Hind', sans-serif;
+  color: #3054DD;
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: center;}
+
+h2 a:hover{
+  opacity: 0.7;
+}
+
 /*Req 5*/
 *:focus{
   border: 3px dashed  #417243;
@@ -184,23 +223,41 @@ main{
 }
 
 
-.art_grid{
-  display: grid;
-  grid-column-gap: 50px;
-
-}
-
-
 /*Req 8*/
 footer{
   position: relative;
-
   width:100%;
-  background:#3054DD;
   min-height: 75px;
   text-align:center;
   color: #FFFFFF;
   left: 0;
   bottom: 0;
+}
+
+
+#content-desktop {display: block;}
+#content-mobile {display: none;}
+
+@media screen and (max-width: 768px) {
+
+#content-desktop {display: none;}
+#content-mobile {display: block;}
+
+}
+
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  color: #3054DD;
+}
+
+.fa:hover {
+    opacity: 0.7;
 }
 

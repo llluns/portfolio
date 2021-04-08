@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="imgs/lauren_1.jpg" type="image/x-icon">
   <link rel="stylesheet" href="css/html5reset.css">
 	<link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="css/grids.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Lato:wght@100;300;400;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,7 +15,7 @@
   <title>Lauren's Portfolio</title>
 </head>
 <body>
-  <header>
+  <header id="content-mobile">
     <!-- Top Navigation Menu -->
     <div class="topnav">
       <a href="what_i_bake.html" class="active" >What I Bake</a>
@@ -33,24 +33,94 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>
-    <h1 class="hide"> What I Bake</h1>
   </header>
+
+
+  <header id="content-desktop">
+    <div class=desktop_menu> 
+      <a href="index.html" >About Me</a>
+      <a href="data_projects.html">Data Projects</a>
+      <a href="what_i_bake.html" class="current">What I Bake</a>
+      <a href="art.html" >Art</a>
+    </div>
+  </header>
+  <h1 class="hide">My Baking</h1>
+
+
     <main>
       <div class='expl'>
         <p> I love love sugar and taught myself how to bake to feed that addiction.  Baking is another creative outlet that lets me try out different flavors, fail, and improve. It is also a mechanism through which I get to connect with people, by cooking with friends and family or saying thank you to an advisor with a macaron.  This is a feed of my instagram @what__i__bake where I get to try out new ways of consuming sugar.</p>
       </div>
-      <div class= 'insta'>
-        <p> Javascript component coming soon here </p>
+      <div class=baking_grid> 
+        <div class="column">
+          <img src="imgs/baking/pic42.png" alt=""/>
+          <img src="imgs/baking/pic41.png" alt=""/>
+          <img src="imgs/baking/pic39.png" alt=""/>
+          <img src="imgs/baking/pic35.png" alt=""/>
+          <img src="imgs/baking/pic1.JPG" alt=""/>
+          <img src="imgs/baking/pic4.JPG" alt=""/>
+          <img src="imgs/baking/pic23.JPG" alt=""/>
+          <img src="imgs/baking/pic14.JPG" alt=""/>
+          <img src="imgs/baking/pic13.JPG" alt=""/>
+          <img src="imgs/baking/pic3.JPG" alt=""/>
+        </div>
+
+        <div class="column">
+          <img src="imgs/baking/pic38.png" alt=""/>
+          <img src="imgs/baking/pic31.png" alt=""/>
+          <img src="imgs/baking/pic32.png" alt=""/>
+          <img src="imgs/baking/pic30.png" alt=""/>
+          <img src="imgs/baking/pic29.png" alt=""/>
+          <img src="imgs/baking/pic27.png" alt=""/>
+          <img src="imgs/baking/pic25.png" alt=""/>
+          <img src="imgs/baking/pic24.JPG" alt=""/>
+          <img src="imgs/baking/pic15.JPG" alt=""/>
+          <img src="imgs/baking/pic35.png" alt=""/>
+
+
+        </div>
+
+        <div class="column">
+          <img src="imgs/baking/pic37.png" alt=""/>
+          <img src="imgs/baking/pic26.png" alt=""/>
+          <img src="imgs/baking/pic33.png" alt=""/>
+          <img src="imgs/baking/pic22.JPG" alt=""/>
+          <img src="imgs/baking/pic21.JPG" alt=""/>
+          <img src="imgs/baking/pic20.jpg" alt=""/>
+          <img src="imgs/baking/pic19.JPG" alt=""/>
+          <img src="imgs/baking/pic18.JPG" alt=""/>
+          <img src="imgs/baking/pic17.JPG" alt=""/>
+          <img src="imgs/baking/pic16.JPG" alt=""/>
+ 
+        </div>
+
+        <div class="column">
+        <img src="imgs/baking/pic34.png" alt=""/>
+        <img src="imgs/baking/pic36.png" alt=""/>
+        <img src="imgs/baking/pic40.png" alt=""/>
+        <img src="imgs/baking/pic12.JPG" alt=""/>
+        <img src="imgs/baking/pic10.JPG" alt=""/>
+        <img src="imgs/baking/pic9.JPG" alt=""/>
+        <img src="imgs/baking/pic8.JPG" alt=""/>
+        <img src="imgs/baking/pic7.JPG" alt=""/>
+        <img src="imgs/baking/pic6.JPG" alt=""/>
+        <img src="imgs/baking/pic2.JPG" alt=""/>
+        </div>
+
       </div>
     
       </main>
 
 
 
-    <footer>
-        <p>University of Michigan School of Information <br/>
-            Lauren Lunsford &copy; 2021</p>
-    </footer>
+      <footer>
+        <div class='social_icons'> 
+          <a href="https://www.instagram.com/what__i__bake/" class="fa fa-instagram"></a>
+          <a href="https://github.com/llluns" class= "fa fa-github"> </a>
+          <a href="https://www.linkedin.com/in/lauren-lunsford-57534312a/" class="fa fa-linkedin"></a>
+        </div>
+      </footer>
+      
     <script src= js/java.js> </script>
 
 </body>

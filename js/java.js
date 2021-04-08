@@ -10,6 +10,8 @@ function myFunction() {
 }
 
 
+/* THIS IS FOR THE SLIDESHOW */
+
 var slideIndex = 1;
 showSlides(slideIndex);
 

@@ -7,15 +7,15 @@
   <link rel="shortcut icon" href="imgs/lauren_1.jpg" type="image/x-icon">
   <link rel="stylesheet" href="css/html5reset.css">
 	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/grids.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Lato:wght@100;300;400;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
   <title>Lauren's Portfolio</title>
 </head>
 <body>
-  <header>
+  <header id="content-mobile">
     <!-- Top Navigation Menu -->
     <div class="topnav">
       <a href="data_projects.html" class="active">Data Projects</a>
@@ -33,16 +33,31 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>
-    <h1 class="hide"> Data Projects</h1>
   </header>
+
+  <header id="content-desktop">
+    <div class=desktop_menu> 
+      <a href="index.html" >About Me</a>
+      <a href="data_projects.html" class="current">Data Projects</a>
+      <a href="what_i_bake.html">What I Bake</a>
+      <a href="art.html" >Art</a>
+    </div>
+  </header>
+
+
+  <h1 class="hide"> Data Projects</h1>
+
     <main>
         <p> During my time as a Master's student, I have gotten to grow my data and programming skills through various projects. <br>
             I am excited to display a few of those projects here.</p>
     </main>
 
     <footer>
-        <p>University of Michigan School of Information <br/>
-            Lauren Lunsford &copy; 2021</p>
+      <div class='social_icons'> 
+        <a href="https://www.instagram.com/what__i__bake/" class="fa fa-instagram"></a>
+        <a href="https://github.com/llluns" class= "fa fa-github"> </a>
+        <a href="https://www.linkedin.com/in/lauren-lunsford-57534312a/" class="fa fa-linkedin"></a>
+      </div>
     </footer>
     <script src= js/java.js> </script>
 

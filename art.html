@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <script src= "js/java.js">  </script>
-  
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Lato:wght@100;300;400;900&display=swap" rel="stylesheet">
 
@@ -13,11 +13,13 @@
 
   <link rel="stylesheet" href="css/html5reset.css">
 	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/grids.css">
+
   <title>Lauren's Portfolio</title>
 </head>
 <body>
-    <header>
-        <!-- Top Navigation Menu -->
+  <header id="content-mobile">
+    <!-- Top Navigation Menu -->
         <div class="topnav">
           <a href="art.html" class="active">Art</a>
           <!-- Navigation links (hidden by default) -->
@@ -34,54 +36,42 @@
           </a>
         </div>
       </header>
-        <h1 class= "hide">Art</h1>
+
+
+  <header id="content-desktop">
+    <div class=desktop_menu> 
+      <a href="index.html" >About Me</a>
+      <a href="data_projects.html" >Data Projects</a>
+      <a href="what_i_bake.html">What I Bake</a>
+      <a href="art.html" class="current">Art</a>
+    </div>
+  </header>
+
+
+        <h1 class= "hide">My Art</h1>
     <main>
         <p> I love exploring aspects of humanity and people through my art.  A common theme throughout my pieces is the exploration of the human form and how our interpretations change with different artistic elements. Most of the work featured is  from 2012-2018 as I have since transitioned to digital art.</p>
+      
       <div class=art_grid> 
-        <div class="art15">
+        <div class=column_art>
           <img src="imgs/art/art15.png" alt=""/>
-        </div> 
-        <div class="art14">
-          <img src="imgs/art/art14.jpg" alt=""/>
-        </div> 
-        <div class="art13">
-          <img src="imgs/art/art13.jpg" alt=""/>
-        </div> 
-        <div class="art12">
           <img src="imgs/art/art12.jpg" alt=""/>
-        </div> 
-        <div class="art11">
           <img src="imgs/art/art11.jpg" alt=""/>
-        </div> 
-        <div class="art10">
           <img src="imgs/art/art10.png" alt=""/>
-        </div> 
-        <div class="art9">
           <img src="imgs/art/art9.jpg" alt=""/>
-        </div> 
-        <div class="art8">
-          <img src="imgs/art/art8.jpg" alt=""/>
-        </div> 
-        <div class="art7">
-          <img src="imgs/art/art7.jpg" alt=""/>
-        </div> 
-        <div class="art6">
-          <img src="imgs/art/art6.jpg" alt=""/>
-        </div> 
-        <div class="art5">
-          <img src="imgs/art/art5.jpg" alt=""/>
-        </div> 
-        <div class="art4">
-          <img src="imgs/art/art4.jpg" alt=""/>
-        </div> 
-        <div class="art3">
-          <img src="imgs/art/art3.jpg" alt=""/>
-        </div> 
-        <div class="art2">
           <img src="imgs/art/art2.jpg" alt=""/>
-        </div> 
-        <div class="art1">
           <img src="imgs/art/art1.jpg" alt=""/>
+          <img src="imgs/art/art3.jpg" alt=""/>
+
+        </div>
+        <div class=column_art>
+          <img src="imgs/art/art13.jpg" alt=""/>
+          <img src="imgs/art/art14.jpg" alt=""/>
+          <img src="imgs/art/art8.jpg" alt=""/>
+          <img src="imgs/art/art7.jpg" alt=""/>
+          <img src="imgs/art/art6.jpg" alt=""/>
+          <img src="imgs/art/art5.jpg" alt=""/>
+          <img src="imgs/art/art4.jpg" alt=""/>
         </div> 
       </div>    
 
@@ -89,9 +79,13 @@
     </main>
 
     <footer>
-        <p>University of Michigan School of Information <br/>
-            Lauren Lunsford &copy; 2021</p>
+      <div class='social_icons'> 
+        <a href="https://www.instagram.com/what__i__bake/" class="fa fa-instagram"></a>
+        <a href="https://github.com/llluns" class= "fa fa-github"> </a>
+        <a href="https://www.linkedin.com/in/lauren-lunsford-57534312a/" class="fa fa-linkedin"></a>
+      </div>
     </footer>
+    
     <script src= js/java.js> </script>
 
 </body>
