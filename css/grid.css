@@ -82,9 +82,6 @@
     }
   
   
-  
-  
-  
   .art_h2{
       grid-column-start: 4;
       grid-row-start:10;
@@ -109,8 +106,7 @@
       grid-row-start:11;
       text-align: right;
     }
-  
-  
+   
   
     /* IMAGES IN THE ABOUT ME */
     .me img {
@@ -127,9 +123,7 @@
     
     .me p{
         padding-top: 15px;
-    }
-
-    
+    } 
   }
 
 
@@ -157,8 +151,4 @@
     .me p{
       padding-bottom: 50px;
     }
-
-
-
-    
     }

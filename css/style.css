@@ -86,7 +86,6 @@ nav{
 
 /* Style the hamburger menu */
 .topnav a.icon {
-  background: white;
   color:#3054DD;
   display: block;
   position: absolute;
@@ -154,7 +153,11 @@ h3{
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   text-align: center;
+}
+
+h3.intro{
   padding-bottom: 50px;
+
 }
 
 p{
@@ -264,4 +267,8 @@ a.skip:focus{
   top:20px;
   color: black;
   text-decoration-style: solid;
+}
+
+p.data{
+  padding-bottom:100px ;
 }

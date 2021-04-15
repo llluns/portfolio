@@ -1,0 +1,50 @@
+/*
+  Author: Lauren Lunsford 
+  Recent Update: April 14, 2021
+  University of Michigan
+*/
+
+.project{
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.068), 0 6px 20px 0 rgba(0, 0, 0, 0.034);
+
+}
+
+h2.project1 {
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+.project h3{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    padding: 20px 20px;
+    font-size: 1em;
+    color: black;
+    text-transform: capitalize;
+
+}
+
+.project h4{
+    color: #3054DD;
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    padding: 10px 10px;
+    font-weight: 300;
+    text-align: center;
+
+}
+
+.project p{
+    padding: 0 10px;
+    padding-bottom: 20px;
+}
+
+.project img{
+    opacity: 1;
+    color:  #3054DD;
+    height: 337px; 
+    object-fit: cover;
+}
