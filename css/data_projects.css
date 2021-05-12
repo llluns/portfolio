@@ -48,3 +48,8 @@ h2.project1 {
     height: 337px; 
     object-fit: cover;
 }
+
+
+footer p{
+    text-align: center;
+}
