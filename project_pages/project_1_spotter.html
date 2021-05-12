@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src= "js/java.js">  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../imgs/lauren_1.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../css/html5reset.css">
+	<link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/flex.css">
+  <link rel="stylesheet" href="../css/data_projects.css">
+  <link rel="stylesheet" href="../css/projects.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Lato:wght@100;300;400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Lauren Lunsford</title>
+</head>
+<body>
+  <a class = "skip" href="#main">Skip to Main Content</a>
+
+  <header id="content-mobile">
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <a href="../ux_projects.html" class="active"> UX Projects</a>
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="myLinks">
+        <a href="../index.html" >About Me</a>
+        <a href="../data_projects.html">Data Projects</a>
+        <a href="../what_i_bake.html">What I Bake</a>
+        <a href="../art.html" >Art</a>
+        
+
+      </div>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()"> ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ 
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </header>
+
+  <header id="content-desktop">
+    <div class=desktop_menu> 
+      <a href="../index.html" >About Me</a>
+      <a href="../data_projects.html" >Data Projects</a>
+      <a href="../ux_projects.html" class="current"> UX Projects</a>
+      <a href="../what_i_bake.html">What I Bake</a>
+      <a href="../art.html" >Art</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <h1>Spotter Sensor and Application</h1>
+    
+    <h2>Table of Contents</h2>
+    <div id="TOC"> 
+        <h3><a href="#intro">1. Introduction</a></h3>
+        <h3><a href="#research">2. Research & Key Insights</a></h3>
+        <h3><a href="#final">3. Final System Concept</a></h3>
+        <h3><a href="#ideal">4. Ideal System Proposal</a></h3>
+        <h3><a href="#demo">5. Demo</a></h3>
+        <h3><a href="#conclusion">6. Conclusion</a></h3>
+    </div>
+
+    <div id="intro"> 
+        <h2>1. Introduction</h2>
+        <img src="../imgs/uxprojects/spotter/1.png" alt="">
+            <h3>Our Motivation</h3>
+            <p>With the onset of Covid-19, the challenges of at-home workouts were intensified. 
+                Our workout routines were forced inside the home, a trend that is likely to continue even post-pandemic. 
+                With this new norm in mind, we thought about existing fitness solutions and products and found a gap in terms of accurate 
+                tracking and insight provided in real-time to users. We sought to create a product that would enhance the at-home workout experience.
+        </p>
+        <img src="../imgs/uxprojects/spotter/2.png" alt="">
+
+    </div>
+
+
+    <div id="research"> 
+        <h2>2. Research & Key Insights</h2>
+            <h3>Study Overview</h3>
+                <p>To flesh out our understanding of the problem, we conducted a diary study to identify user needs and desires. 
+                    We also conducted user enactments of six scenarios, which were divided into three categories: individual gym sessions, 
+                    group classes, and sessions with a personal trainer. We also explored user needs pre, during, and post workout and tried to 
+                    gain a better understanding of how much automation or control users desired for the application component of our product. 
+                    Finally, we analyzed competitors such as Strava and Volt to identify ways these applications addressed user needs or fell short.
+                </p>
+                <img src="../imgs/uxprojects/spotter/3.png" alt="">
+
+            <h3>Diary Study</h3>
+                <p>Participants were asked to keep a log of their exercises as well as the feelings associated with them over the span of 2 days.
+                     They could either text their thoughts to us directly, keep a hand-written diary, or type their notes. We also asked them to take
+                      photos of their workout experiences, whether those were at home, at the gym, or outdoors. They could also include screenshots of
+                       their Apple watch or Fitbit to show the recorded data regarding their workouts. On the right you can see a couple of the images
+                        submitted by our participants.
+                </p>
+                <img src="../imgs/uxprojects/spotter/4.png" alt="">
+
+            <h3>Speed Dating and User Enactment</h3>
+                <p>The table on the left shows our selected scenarios from our speed dating matrix. 
+                    We divided our scenarios into individual gym sessions, group classes, and sessions with a personal trainer. 
+                    Because we focused on the application portion of our product, the user enactments became more akin to user tests. 
+                    We explored user needs pre, during, and post workout and tried to gain a better understanding of how much automation 
+                    or control users is desired. On the right you can see examples of two slides we showed for one scenario.
+                </p>
+                <img src="../imgs/uxprojects/spotter/5.png" alt="">
+
+            <h3>Rough Competitor Analysis</h3>
+                <p>For the competitor analysis, we took into consideration our insights from the speed dating results and took notes 
+                    on how each app addressed our user’s key pain points, including screenshots of screens where helpful. 
+                    We were able to utilize the insights from this to help develop the application portion of our product.
+                </p>
+                <img src="../imgs/uxprojects/spotter/6.png" alt="">
+
+            
+            <h3>Key Insights</h3>
+                <p>From our research, we were able to identify three pertinent pain points for our ideal users. 
+                    These pain points were a lack of motivation, the inability to check their form, and the annoyance of tracking. 
+                    These pain points weren’t exclusive to the at-home experience, as not everyone can afford a trainer to help with the 
+                    form at the gym, and even in a regular setting, most people don’t write down reps, sets, and weight because of how 
+                    laborious it is. For users who want to track their progress, their current solution is to keep a personalized notebook 
+                    or workout log, but it takes time and disrupts workouts if you log as you go. If you wait until the end, it’s difficult 
+                    to accurately remember your sets and reps. Others don’t bother with tracking at all, and miss out on potential benefits 
+                    and opportunities for growth and development in their home workout routines.
+                </p>
+                <img src="../imgs/uxprojects/spotter/7.png" alt="">
+
+
+                <p>We learned users do want to track their progress over time. 
+                    A product that could provide data on sets, reps, and weights over time per exercise would allow users to 
+                    adjust their workouts and better achieve their goals. We also learned users really value having correct form 
+                    in order to target the correct muscle groups and prevent injuries. Through interviews, we discovered users want 
+                    to be notified of incorrect form immediately, through audio and visuals. Finally, we discovered users often workout 
+                    at home alone, but seek other means of accountability and motivation. We addressed this desire through incorporating 
+                    a social feed on our Spotter app.
+                </p>
+                <img src="../imgs/uxprojects/spotter/8.png" alt="">
+
+    </div>
+
+
+    <div id="final"> 
+        <h2>3. Final System Concept</h2>
+            <h3>Our System</h3>
+                <p>The Spotter sensor is a futuristic product that can be realized in 5-10 years and is designed to support users with 
+                    their at-home workouts. The Spotter smart sensor is a flexible device that you attach to each weight in your home gym. 
+                    It is fitted with components that enable the sensor to capture details about your workout movements when using weights. 
+                    It pairs with our mobile application to give you workout metrics and analytics to help you understand your progress, 
+                    injury preventing form corrections, and helps motivate your workouts by incorporating friends into your workout routine.
+                    ‍<br><br>
+                    The Spotter sensors and app can be helpful for users who enjoy working out and have any level of experience. 
+                    Our audience includes users who range from inexperienced to experienced and are looking for a way to safely utilize 
+                    home equipment and could benefit from tracking their reps, sets, and weights over time.
+                    </p>
+                    <img src="../imgs/uxprojects/spotter/9.png" alt="">
+
+            <h3>Key Features</h3>
+                    <p>Our three key features address each of our pain points. 
+                        Spotter serves as your form buddy so you can feel safe and confident trying out new exercises. 
+                        You no longer have to feel tied to exercises you are familiar with or have a personal trainer by your side. 
+                        Spotter also connects you with your friends who aren’t physically there supporting you. 
+                        Lastly, Spotter provides you with intuitive visuals so you no longer have to count and remember every detail of your exercises.
+                    </p>
+                    <div class='pics'>
+                    <img src="../imgs/uxprojects/spotter/10.png" alt="">
+                    <img src="../imgs/uxprojects/spotter/11.png" alt="">
+                    <img src="../imgs/uxprojects/spotter/12.png" alt="">
+                    <img src="../imgs/uxprojects/spotter/13.png" alt="">
+                    </div>
+
+
+
+    </div>
+
+
+    <div id="ideal"> 
+        <h2>4. Ideal System Proposal</h2>
+            <h3>System Proposal</h3>
+                <p>The user works out using the sensors, creating movements that are captured by the accelerometer and gyroscope. 
+                    That data is then sent to the application where it’s interpreted by our algorithm and recommendations, insights, and 
+                    social features are provided to the user.
+                    The amount of sensors each user needs is varied depending on the type of equipment and number of plates. 
+                    ‍<br><br>
+                    For example, for a barbell exercise each sensor attaches to the curved edge of each individual plate. 
+                    Our product also has a flexible, adhesive backing to attach to multiple kinds of surfaces such as dumbbells. 
+                    The sensor connects with your phone when you begin a workout and your phone groups all active sensors together to 
+                    automatically note how much total weight you're using. The identification of the weight is proximity based, and if 
+                    the sensors are moving in unison they will be grouped together. Our smart sensors can identify the movement of your 
+                    exercise to determine what exercise you’re doing, how many reps you’ve done, how many sets you’ve done, and what the 
+                    weight is.
+                </p>
+                <img src="../imgs/uxprojects/spotter/14.png" alt="">
+
+                <p>The Spotter algorithm utilizes machine learning to detect the current exercise being performed based on the accelerometer and gyroscope data. 
+                    It then compares this form against the “ideal form” and finds form irregularities. 
+                    If a dangerous form is detected, it will alert the user right away. Otherwise, advanced form feedback can be found in the workout summary 
+                    details for each workout. 
+                    It also piggybacks off of existing technology to interpret accelerometer and gyroscope data to identify each rep, set, and total weight used.
+                </p>
+                <img src="../imgs/uxprojects/spotter/15.png" alt="">
+
+                <p>These are all of the components that are in our proposed sensor. Our sensor has a gyroscope to pick up the 
+                    3D motion of the sensor, an accelerometer to pick up the speed and acceleration of the sensor, and a Beetle 
+                    BLE with built-in Bluetooth to act as our microcontroller. Other high-level components and architecture include a 
+                    battery and LED light.
+                </p>
+                <img src="../imgs/uxprojects/spotter/16.png" alt="">
+
+    </div>
+
+    <div id="demo"> 
+        <h2>5. Demo</h2>
+            <h3>Our Demo</h3>
+            <p>
+             For our demo, we wanted to provide an overview of Spotter as well as highlight our three main features and how they solve our three main pain points. The prototype you’ll see in our demo included a functional LED and utilized Wizard of Oz to simulate the other functional components.
+            </p>
+            <img src="../imgs/uxprojects/spotter/17.png" alt="">
+
+
+            <h3>Demo Video</h3>
+            <video width="830" height="520" controls>
+                <source src="../vids/demo.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+              </video>
+
+            <p>The full script to the demo can be found <a href="https://docs.google.com/document/d/1XK7NpGDw6oYbK0x4LowbVOH_KenG5fMgiLVVvdYf4gk/edit">here</a></p>
+
+    </div>
+
+    <div id="conclusion">
+        <h2>6. Conclusion</h2> 
+            <h3>Design Limitations</h3>
+                <p><u>Sensor User Research</u>: We did not have the ability to perform user research on the sensor part of our design, which led to gaps in information such as: is setting up a sensor onto a weight intuitive? Do users understand the status of a given sensor? Does sensor placement and design have an impact on workouts?
+                    ‍<br><br>
+
+                    <u>Technical and Material Constraints</u>: In order to conduct sensor user research, we would have needed a higher fidelity prototype. For instance, to understand how the sensor design and placement affect a workout, we would need to have various adhesive materials to understand where our sensor could be attached to a weight and whether or not this would hinder a workout. Additionally, not understanding the energy requirements of our sensor prevented us from making the decision between including a charging port or making the battery removable. Charging ports increase the size of the sensor and would be a theoretical hindrance, but if the expected battery life is short, a charging port would be a desired feature.
+                    ‍<br><br>
+
+                    <u>Target User Selection</u>: We created the prototype and demo video for home usage of the Spotter sensor and application. One discussion we had many times as a group was the viability of our product being sold to gyms directly to put on all of the equipment versus sold to users at home. In terms of cost, we still believe gyms could be an ideal target user, however, we had limited access to these users when conducting our research. 
+                    </p>
+            
+            
+            <h3>Insights</h3>
+                <p><u>Prioritizing User Needs</u>: Through our ideation and prototyping process we learned we could not fulfill every user need in the fitness space, so as a team we had to prioritize based on themes uncovered through our research and also based on the capabilities of the sensor. For instance, users often spoke about wanting body fat and heart rate detection capabilities. Since our product does not directly touch the user during workouts, this was not a need we could fulfill in our design. 
+                    ‍<br> ‍<br>
+
+                    ‍<u>User Research and Testing for the Sensor</u>: Our biggest takeaway in working through this project was that we may have gone too broad in the initial user research phase and focused too heavily on the application portion of our product, versus deeply thinking through the IoT device. It would have been beneficial to use the diary studies and user enactments to test and gain more insight for our sensor specifically. 
+                    ‍<br><br>
+                    ‍<u>Video Script, Filming, and Editing</u>: Through writing the script, we learned it can be difficult to create a fluid and compelling narrative for a product. Also, it was challenging to record users in the workout space separately from close-up shots of the product and then combine this distinct footage. Additionally, in terms of editing, it was difficult to appropriately time and match the visual and audio elements.
+                </p>
+
+
+            <h3>Next Steps</h3>
+                <p><u>Algorithm Development</u>: A key component of Spotter is its algorithm. In theory, identification of exercises should be possible but a next step would be to test this. As a proof of concept, we would gather gyroscope and accelerometer data to see if classification of exercise is possible. If it is possible, the next step would be to continue developing the algorithm.
+                    ‍<br><br>
+                    <u>Application Development</u>: We would need to continue wireframing and testing our application. Our early user research was helpful in developing key features, but we need to develop other key aspects of the design such as the optimal information architecture, onboarding process, and other ways of incorporating audio and visual feedback to ensure we do not disturb users’ workout experience.
+                    ‍<br><br>
+                    <u>Sensor Development</u>: Our next step in developing the sensor would be to increase the fidelity and create a sensor capable of transmitting gyroscope and accelerometer data. 
+                    ‍<br><br>
+                    <u>User Research at Gyms</u>: We want to consider marketing Spotter towards gyms not just individual users. To understand how design needs may differ in gyms versus at home, we would need to conduct user research in gym environments.
+                </p>
+
+    </div>
+
+
+
+
+
+
+    </main>
+
+    <footer>
+      <div class='social_icons'> 
+        <a href="https://www.instagram.com/what__i__bake/" class="fa fa-instagram">‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎</a>
+        <a href="https://github.com/llluns" class= "fa fa-github"> ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎‎</a>
+        <a href="https://www.linkedin.com/in/lauren-lunsford-57534312a/" class="fa fa-linkedin">‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎</a>
+      </div>
+      <p class='footer'>Website built and designed by Lauren Lunsford &copy; 2021 </p>
+
+    </footer>
+
+    <script src= js/java.js> </script>
+
+</body>
+    
