@@ -255,3 +255,17 @@ a.skip:focus{
 p.data{
   padding-bottom:100px ;
 }
+
+blockquote{
+  margin: 10px 200px;
+  font-style: italic;
+}
+
+.link{
+  color:lightcoral;
+  text-align: center;
+}
+
+a.link{
+  color: lightcoral;
+}

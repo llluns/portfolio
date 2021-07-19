@@ -1,0 +1,145 @@
+/*
+  Author: Lauren Lunsford 
+  Recent Update: July 7, 2021
+  University of Michigan
+*/
+
+
+.resume{
+  margin: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.068), 0 6px 20px 0 rgba(0, 0, 0, 0.034);
+
+}
+
+h2{
+  text-align: center;
+  
+}
+
+h3{
+  text-align: left;
+  padding-left: 20px;
+  font-size: 100%;
+  font-weight: normal;
+  
+
+}
+
+h4{
+  padding-right: 20px;
+  text-align: right;
+}
+
+h5{
+  padding-left: 20px;
+  font-style:italic;
+
+}
+
+
+h6{
+  padding-right: 20px;
+  text-align: right;
+  font-style:italic;
+
+
+}
+p{
+  text-align: left;
+  padding-left: 40px;
+
+}
+
+
+.company{
+  display:grid;
+  grid-template-columns: auto auto;
+}
+
+.role{
+  display:grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  padding-bottom: 20px;
+}
+
+.TOC{
+  display:grid;
+  grid-template-columns: auto auto auto auto;
+  margin: 30px;
+  padding:30px;
+}
+
+.TOC h3{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.TOC h3 a{
+  font-family: 'Lato', sans-serif;
+  color: #3054DD;
+  font-size: 100%;
+}
+
+.role p{
+  grid-column:1/3; 
+  padding-right: 20px;
+
+}
+
+h4 a{
+  font-size: 100%;
+}
+
+
+.projects_grid{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.projects_grid h3{
+  padding-right: 10px;
+}
+
+
+.table{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.068), 0 6px 20px 0 rgba(0, 0, 0, 0.034);
+  padding: 20px;
+}
+
+.yes{
+  padding:30px;
+  background-color: #3054DD
+}
+
+.no{
+  padding:30px
+  
+}
+
+.skill p{
+  text-align: center;
+  padding: 0px;
+  margin-top:20
+}
+
+.skill{
+  margin-right: 10px;
+  min-height: 100px;
+}
+
+.table{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+.exp p{
+  padding:0px;
+}
+
+.o{
+  padding-top: 32px;
+}
+
+.bo{
+  padding:33px;
+}
