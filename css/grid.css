@@ -152,3 +152,11 @@
       padding-bottom: 50px;
     }
     }
+
+
+
+    .findings_grid{
+      display:grid;
+      grid-template-columns: auto auto;
+      padding: 50px 10%;
+    }

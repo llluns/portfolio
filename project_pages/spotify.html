@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../css/flex.css">
   <link rel="stylesheet" href="../css/data_projects.css">
   <link rel="stylesheet" href="../css/projects.css">
+  <link rel="stylesheet" href="../css/grid.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Lato:wght@100;300;400;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -51,17 +52,236 @@
   </header>
 
   <main id="main">
-    <style> #main{background-color: black; }
-    </style>
+    
+    <h1>Spotify Data Analysis</h1>
+
+    <h2>Table of Contents</h2>
+    <div id="TOC"> 
+        <h3><a href="#intro">1. Overview</a></h3>
+        <h3><a href="#data">2. Data & Tools</a></h3>
+        <h3><a href="#Preprocessing">3.  Data Preprocessing</a></h3>
+        <h3><a href="#Findings">4. Findings</a></h3>
+        <h3><a href="#Challenges">5. Challenges</a></h3>
+        <h3><a href="#Conclusion">6. Conclusion</a></h3>
+    </div>
+
+
+    <div id="intro"> 
+      <h2>1. Overview</h2>
+          <p> 
+            Music has always been a fascinating example of behavior. We change what we listen to 
+            based on our mood. Feeling sad? Maybe mirror that with some Norah Jones. Trying to party?
+            Throw on some 50cent. Want to finish up a project that's due tomorrow and it's already 11pm the night before
+            (huh, wonder what that feels like...)? Maybe you need some intense edm to keep you focused 
+            with the four shots of espresso you're about to consume.
+
+            <br>
+            <br>
+            I wanted to take my own listening data and explore what it said about me. In the following page, 
+            you'll see what I was and wasn't able to re-confirm about my listening habits. All the code is posted on
+            <a href="https://github.com/llluns/spotify_data_analysis">github</a>, so you're welcome to explore a bit about yourself too.
+      </p>
+  </div>
+
+  <div id="data"> 
+    <h2>2. Data & Tools</h2>
+
+    <p>
+      I used 2 main data types:
+      <br>
+      <br>
+    </p>
+<h3>Personal listening data</h3>
+    <p>
+
+      This data was downloaded directly from spotify in my settings under privacy. 
+      Of this data, I used a 1 year record of listening history (Song, Track, Artist, Listening End Time), and my playlist data (Song, Track, Artist, & Uri for each song in a Playlist ). 
+      Both of these files came in json formats. 
+      <br>
+      <br>
+    </p>
+      <div class='img_block'>
+        <img src="../imgs1/spotify/1.png" width="500" alt="dataframe, end time, artist name, track name, msplayed"> 
+        <img src="" alt="">
+      </div>
+
+      <h3>Spotify web API</h3>
+    <p>
+    
+      Spotify web API data  provided feature data on songs. These features can be seen below:
+      <br>
+    </p>
+      <img src="../imgs1/spotify/8.png" width="500" alt="">
+    <p> 
+      <br>
+      To collect this data, I had to work with the web API. You can find 
+      a link to the documentation <a href="Source: https://developer.spotify.com/discover/ ">here</a>.
+      <br><br>
+      To collect all the data, I created an application in the developer site for Spotify, 
+      then created a python script to return song features for all song uri's 
+    </p>
+    <img src="../imgs1/spotify/api1.png" width=500 alt="">
+    <img src="../imgs1/spotify/api2.png" width=500  alt="">
+    <img src="../imgs1/spotify/api3.png" width=500  alt="">
+
+      
+
+  </div>
+
+  <div id="Preprocessing">
+    <h2>3. Data Preprocessing</h2>
+    <h3>Reading in the Data</h3>
+    <p>Files were in json formats. Streaming history was a simple transition to a dataframe. Gathering 
+      the required data from the playlist data required a more extensive script, as seen below:
+    </p>
+    <img src="../imgs1/spotify/read_hist.png" width="500" alt="" >
+    <img src="../imgs1/spotify/read_pl.png" width="500" alt="">
+
+
+    <h3>Time Zone Change</h3>
+    <p> During some early data anlaysis, I realized the endTimes were in UTC, and weren't localized to 
+      my time zone. I had to change this to be able to plot listening patterns throughout time. 
+      This was difficult because I had been in multiple time zones. I fixed this using the code below. 
+      I will go into this further in the challenges section.
+    </p>
+    <img src="../imgs1/spotify/time_change_img.png" width="600" alt="">
+
+
+      <h3>Data Unification</h3>
+      <p>This proved to be the biggest setback of the project. To gather feature data, 
+        you need the song uri. The listening data only provides the album song and artist, not
+        the uri. The playlist data includes the uri. This means I could only get features for songs in my playlists.
+        Once I gathered the features and merged the features with the listening data, the dataset size decreased to 33% of what it
+        initially was, which lead to imperfect data analysis. I will go into this further in the challenges section.
+      </p>
+
+
+
+  </div>
+
+
+
+  <div id="Findings">
+    <h2>4. Findings</h2>
+
+
+      <div >
+        <h3>Time of Day Analysis</h3>
+        <img src="../imgs1/spotify/Time Analysis.png" alt="">
+  
+        <p> I listen the least in the morning and late night, or approximately between 2-9am
+          <br><br>
+          I listen the most 3-7pm 
+          <br><br>
+          There is no real difference in listening patterns by day of the week, against my hypothesis that listening would be decreased on weekends because of increased social activity
+          </p>
+      </div>
+      <div >
+        <h3>Favorites</h3>
+        <img src="../imgs1/spotify/Your Favorites.png" alt="">
+        <p> Kokoroko was my most played artist, approximately 150% longer listening time than the next longest song. This makes sense as it’s the song I use for white noise while studying
+          <br><br>
+          Favorite artist follows a similar pattern as above
+          <br><br>
+          Because of the dataloss during merging, this data doesn't show my true favorites, only
+          my favorites of the songs in my playlists
+        </p>
+      </div>
+      
+      <div >
+        <h3>Feature Analysis over Time</h3>
+        <img src="../imgs1/spotify/FA2.png" alt="">
+        <p>No significant change in average features across the year period. This indicates that my preferences in song styles are approximately the same
+          <br><br>
+          Future direction: Explore how combinations of features change over time & how features vary from playlist to playlist
+          
+          </p>
+      </div>
+
+      <div >
+        <h3>Network Analysis of Playlists</h3>
+        <img src="../imgs1/spotify/4.png" width= 400 alt="">
+        <p>I created networks where songs or artists were connected if they 
+          shared the same playlist.  The edges were weighted such that the larger 
+          the playlist, the weaker the edge to avoid centrality biases towards 
+          songs in large networks. In the visualizations below, songs or artists are 
+          represented by black dots, and the lines between are the playlists that two artists 
+          or songs share. Each color corresponds to a playlist. 
+          <br><br>
+          Future analysis should investigate centrality of songs and artists and 
+          attempt to cluster artists and see if clusters are logical. Additionally, it would be interesting 
+          to train a model to try to predict playlists based on song features.
+
+        </p>
+
+      </div>
+   
+
+
+  </div>
+
+
+
+  <div id="Challenges">
+    <h2>5. Challenges</h2>
+    <h3>Time Zones</h3>
+    <p>
+      <br>
+       As noted, the initial time zones were all set to UTC. When I did the initial time analysis, I saw that my least listened to hour was around noon. This seemed off since 
+       I know this is typically a time I enjoy listening to music. The pattern seemed to be shifted so I made the inference 
+       that the data was not specifc to a time. After some research, I found that the time zone it was likel reported in 
+       is UTC. This meant that I needed to convert the time zones, with the added complexity of juggling
+       multiple different time zone changes throughout the data period. 
+       <br><br>
+       <img src="../imgs1/spotify/7.png" alt="">
+       <br>
+       <br>
+       To convert the times, I initially tried breaking the year, month, day, hour, minute, and seconds into individual integers 
+       and subtracting 8 or 5 hours to the hour vector depending on which state I had been in on that given date. I then ran into the issue of 
+       negative hours.  For example, 5 am - 8 hours doesn't just become -3am, it becomes 9pm the night before, which means the date 
+       also needed to change. And, on new years, it means that the year can change too. 
+       <br><br>
+       To combat this, I decided to look into datetime. I found a package called <i>pytz</i> that allows for 
+       time zone changes of datetime items. I then just created a function that normalized the time zone to UTC, 
+       and then that changed the time zone to either EST or PST according to where I was at that given date. 
+        <img src="../imgs1/spotify/2.png" alt="">
+       <img src="../imgs1/spotify/time_change_img.png" alt="the code of how i do it (can be found on my github)">
+
+       
+    </p>
+
+    <h3>Incomplete Data</h3>
+    <p>
+      I couldn't get all the uri's for each song I had listened to, only songs in my playlist. 
+      I found out later I could get the uri's for all songs in my library, but this was too late in 
+      the process and I was constricted by time. Not having all song uri's meant not being able to source 
+      all the feature data for each song. The dataset dropped from 25042 rows to 9114 rows, a 63% loss of data.
+       I was able to still do a partial analysis, but it was not as accurate due to the lack of data.  
+
+    </p>
+
+
+  </div>
+
+  <div id="Conclusion">
+    <h2>6. Conclusion</h2>
+    <h3>What I Learned</h3>
+    <p>I strengthened my confidence with Python <br> <br>
+      I strengthened my comfort with data visualization in python  <br> <br>
+      I strengthened comfort accessing API’s <br> <br>
+      I refreshed my knowledge on Network analytics and properties<br> <br>
+      I learned Tableau <br> <br>
+      I made my first dashboard
+      <br> <br>
+      </p>
+  </div>
+
 
     <img src="../imgs1/spotify/spt.png" alt="">
     <img src="../imgs1/spotify/spt0.png" alt="">
     <img src="../imgs1/spotify/spt1.png" alt="">
     <img src="../imgs1/spotify/spt2.png" alt="">
     <img src="../imgs1/spotify/spt3.png" alt="">
-
-
-
 
 
     </main>
