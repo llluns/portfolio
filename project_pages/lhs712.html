@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src= "js/java.js">  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../imgs/lauren_1.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../css/html5reset.css">
+	<link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/flex.css">
+  <link rel="stylesheet" href="../css/data_projects.css">
+  <link rel="stylesheet" href="../css/projects.css">
+  <link rel="stylesheet" href="../css/grid.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Lato:wght@100;300;400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Lauren Lunsford</title>
+</head>
+<body>
+  <a class = "skip" href="#main">Skip to Main Content</a>
+
+  <header id="content-mobile">
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <a href="../data_projects.html" class="active"> Data Projects</a>
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="myLinks">
+        <a href="../index.html" >About Me</a>
+        <a href="../ux_projects.html">UX Projects</a>
+        <a href="../what_i_bake.html">What I Bake</a>
+        <a href="../art.html" >Art</a>
+        
+
+      </div>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()"> ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ 
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </header>
+
+  <header id="content-desktop">
+    <div class=desktop_menu> 
+      <a href="../index.html" >About Me</a>
+      <a href="../data_projects.html" class="current">Data Projects</a>
+      <a href="../ux_projects.html" > UX Projects</a>
+      <a href="../what_i_bake.html">What I Bake</a>
+      <a href="../art.html" >Art</a>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <h1>Natural Language Processing Classification of Covid Tweets</h1>
+
+    <h2>Table of Contents</h2>
+    <div id="TOC_center"> 
+        <h3><a href="#intro">1. Introduction</a></h3>
+        <h3><a href="#data">2. Exploratory Data Analysis</a></h3>
+        <h3><a href="#Preprocessing">3.  Data Preprocessing</a></h3>
+        <h3><a href="#Findings">4. Natural Language Processing Models</a></h3>
+        <h3><a href="#Conclusion">5. Conclusion</a></h3>
+        <h3><a href="#contributions">6. Member Contributions</a></h3>
+    </div>
+
+
+    <div id="intro"> 
+      <h2>1. Overview</h2>
+          <p> 
+              This project is an attempt at the Social Media Mining for Health Task 6. 
+              The goal of this task was to classify tweets containing mentions of covid-19 as either self-reported,
+              non-personal reports, or literature and news mentions of covid-19.  Examples of tweets in each category can be 
+              seen below:
+          </p>
+          <img src="../imgs1/lhs712/tweet_examples.png" alt="">
+          <p><br>
+        The data included 6000+ annotated tweets from which we trained and tested our models.</p>
+  </div>
+
+  <div id="data"> 
+    <h2>2. Exploratory Data Analysis</h2>
+
+    <h3>Preprocessing</h3>
+        <p>
+            We examined characteristics of the data, looking at metrics such as the document frequency, and frequency of non-stop words grouped by label. This allowed us to understand key words or phrases to identify that informed model decisions. We identified the distribution of labels in the dataset and manually read through tweets of each category.  Please observe the figures below for graphic representation of results.  
+        </p>
+        <img src="../imgs1/lhs712/EDA_0.png" alt="graph">
+        <img src="../imgs1/lhs712/EDA_1.png" alt="graph">
+        <img src="../imgs1/lhs712/EDA_2.png" alt="graph">
+
+    <h3>Key Observations</h3>
+        <p>The most informative takeaway was there seemed to be key features of literary news tweets that didn’t occur in the self-report or non-personal tweets, and that the differences between self-report and non-personal tweets was the subject of the tweet that interacted with the covid symptoms.  
+            <br><br> We hypothesize that the difficulties in differentiating between self-report and non-personal tweets is the grammar involved. For example, in the phrase “She got more cough medicine for me. Covid sucks.”, we know that she is the actor, but the author is the one with covid. Understanding who the covid-related word relates to in a sentence would help differentiate this from a phrase such as “She got more cough medicine. Covid sucks”, which more likely indicates that she has covid. Please also see figure 4 in the appendix for an additional example.  We initially hoped to feature engineer PoS tags to help the model differentiate but had difficulties utilizing tweet-trained models. We hope to bypass this by utilizing a neural network in future models.
+        </p>
+
+  </div>
+
+  <div id="Preprocessing">
+    <h2>3. Data Preprocessing</h2>
+    <h3>Reading in the Data</h3>
+    <p>To preprocess our data, we removed stop words, removed punctuation, made all text lowercase, removed @ mentions, removed digits, and stemmed the text. To test our data, we split out data into an 80/20 train/test groups with a constant seed for repeatability.  For feature extraction, we tokenized into TF-IDF vectors using unigrams to trigrams (with a minimum document frequency of 100) to gather features. 
+    </p>
+
+  </div>
+
+
+  <div id="Findings">
+    <h2>4. Natural Language Processing Models</h2>
+
+
+      <div >
+        <h3>Classical Machine Learning Attempts</h3>
+       <p>Following preprocessing, we implemented weighted SVM models, logistic regression models and KNN classification models. The logistic regression model performed the best with F1 scores of .98, 95, and 89, on the lit-news, non-personal and self-report categories respectively. For a visual representation of the LR model, please see figure 1. The parameters of the best logistic regression model were l2 for penalization, a C value of 1.0, and an L-BFGS solver.</p>
+        <img src="../imgs1/lhs712/model_classic.png" alt="">
+
+
+        <h3>Two Step Binary Classification Model</h3>
+        <p>Utilizing the information from our EDA, we hypothesized that creating two sets of binary classification models would help improve our F1 scores between the self-report and non-personal categories. The first binary split includes differentiating between [lit news] and [self-report, non-personal] tweets. The second binary split differentiates between [self-report] and [non-personal] tweets. For the second binary split, we lowered the minimum frequency requirement for the n-grams to 10 tweets and the F scores improved.  The F1 scores for this attempt were .98, .93, and .86, slightly lower than the F1 scores of the 3-way classification model. All classifiers in this case were logistic regression models with identical parameters to the best performing model in our previous attempts.</p>
+        <img src="../imgs1/lhs712/model_two-step.png" alt="">
+
+        <h3>Neural Classification Model</h3>
+        <p>Additionally, our team implemented a feed forward neural classifier model to examine its classification performance. To featurize our training data for the network, we first preprocessed our data and tokenized them. Following tokenization, we padded the observations to the max sequence length and subsequently. The first layer of the network was an embedding layer, where word values were mapped to their respective 300-dimensional GloVe embedding. Following the embedding layer, we introduced 2 dense layers of 128 nodes each with tanh activation function, with a final dense layer of 3 nodes with softmax activation to output probabilities. The model was trained with sparse categorical cross entropy loss function and an adam optimizer for 50 epochs. This classification model gave us an accuracy of 92%. We found that this model did not perform as well as our simple logistic regression model. </p>
+        <img src="../imgs1/lhs712/model_nn.png" alt="">
+    </div>
+
+  </div>
+
+
+
+  <div id="Conclusion">
+    <h2>5. Conclusion</h2>
+    <h3>Takeaways</h3>
+    <p>Binary classification scored slightly worse than a simple LR model. This might be because the training data size is significantly reduced in the second binary classification. 
+        <br><br> Grammar is a large component of differentiating self-reports and non-personal and is difficult to capture and represent.
+        <br> <br> Lit-News did the best, could be because it has the most training data, or because it is the most distinct category when represented through n-grams
+      </p>
+    <h3>Proposed Future Studies</h3>
+    <p>Future studies could improve upon the current model in the following ways: <br><br>
+        1.	Incorporating grammar into the model. This could be done by PoS tagging that has been trained on tweets. Our EDA concluded grammar was an important defining characteristic between non-personal reports and self-reports, therefore, this split may be useful on the second step of the two step binary classification, where the model splits between those two categories. 
+        <br> 2.	Incorporating additional contextual methods such as an LSTM or different RNN. 
+        <br> 3.	Utilizing entity recognition, not just Bag of Words. 
+        </p>
+  </div>
+
+
+    <div id='contributions'>
+        <h2>6. Member Contributions</h2>
+        <h3>Everyone</h3>
+        <p> Each person was responsible for exploratory data analysis and testing different algorithms on the problem. The majority of the work done for this project occurred over group zoom meetings where all members were present and contributing. 
+        </p>
+        <h3>Sulayman</h3>
+        <p> Sulayman was the quickest coder. When zooming together to work on the project, he would take lead over the actual code contributions while Fernando and Lauren spotted code errors, feature contributions, wrote code snippets, model tweaks, conceptualizations and identified next steps. 
+        </p>
+        <h3>Lauren</h3>
+        <p>        Lauren went through and manually looked at the tweets to derive insight.  She utilized this, and the EDA to conceptualize the two-step binary classification.  She also took primary responsibility over the PowerPoint presentation, report and accompanying diagrams. 
+        </p>
+        <h3>Fernando</h3>
+        <p>        Fernando ran the classification models on the test data to get the predictions. Took responsibility in showcasing the EDA during the project presentation. 
+        </p>
+
+
+    </div>
+
+
+    </main>
+
+    <footer>
+      <div class='social_icons'> 
+        <a href="https://www.instagram.com/what__i__bake/" class="fa fa-instagram">‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎</a>
+        <a href="https://github.com/llluns" class= "fa fa-github"> ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎‎</a>
+        <a href="https://www.linkedin.com/in/lauren-lunsford-57534312a/" class="fa fa-linkedin">‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎ ‏‏‎ ‎</a>
+      </div>
+      <p class='footer'>Website built and designed by Lauren Lunsford &copy; 2021 </p>
+
+    </footer>
+
+    <script src= js/java.js> </script>
+
+
+    
+</body>
+    
