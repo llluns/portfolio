@@ -1,0 +1,7 @@
+AuthUserFile /full/path/to/.htpasswd
+AuthType Basic
+AuthName "My Secret Page"
+
+<Files "for_lauren.html">
+  Require valid-user
+</Files>

@@ -156,6 +156,7 @@ p{
 
 .tired{
   padding-bottom: 50px;
+
 }
 
 
@@ -268,4 +269,13 @@ blockquote{
 
 a.link{
   color: lightcoral;
+}
+
+div.indented_quote{
+  margin-top: 190pt;
+  font-style: italic;
+  margin-bottom: 150pt;
+  font-size: 200% ;
+  
+
 }
