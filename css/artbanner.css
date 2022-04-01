@@ -1,0 +1,120 @@
+/*
+  Author: Lauren Lunsford 
+  Recent Update: March 31, 2022
+  University of Michigan
+*/
+.artbanner{
+    margin-top: 100px;
+    margin-bottom: 80px;
+
+
+}
+
+@media screen and (min-width: 600px) {
+.artbanner{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    height: 200px;
+    text-align: center;
+    align-content: center;
+    gap: 10px;
+
+
+}
+
+.option1{
+
+  height:190px;
+  grid-column-start: 2;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+
+.option2{
+  height:190px;
+  grid-column-start: 3;
+  position: relative;
+  text-align: center;
+  color: white;
+
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:white;
+  font-weight:700;
+  font-size: xx-large;
+}
+.croppedimg{
+  width: 300px ;/* width of container */
+  height: 100%; /* height of container */
+  object-fit: cover;
+}
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .artbanner{
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    text-align: center;
+    align-content: center;
+
+
+}
+
+.option1{
+  height:190px;
+  grid-row-start: 1;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.option2{
+  height:190px;
+  grid-row-start: 2;
+  position: relative;
+  text-align: center;
+  color: white;
+
+}
+
+
+.croppedimg{
+  width: 80% ;/* width of container */
+  height: 100%; /* height of container */
+  object-fit: cover;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:white;
+  font-weight:700;
+  font-size:x-large;
+
+}
+
+
+}
+
+
+
+
+.option1:hover{
+  opacity: 60%;
+}
+.option2:hover{
+  opacity: 60%;
+
+}
