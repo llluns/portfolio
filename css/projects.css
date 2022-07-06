@@ -78,3 +78,18 @@ video{
 footer p{
     text-align: center;
 }
+
+h4{
+    margin-left: 140px;
+    padding-top: 20px;
+}
+
+.two-col{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.three-col{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

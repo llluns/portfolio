@@ -53,69 +53,184 @@
 
   <main id="main">
     
-    <h1>Spotify Data Analysis</h1>
+    <h1>Restaurant Sales Predictive Modelling</h1>
 
     <h2>Table of Contents</h2>
-    <div id="TOC_center"> 
+    <div id="TOC"> 
         <h3><a href="#intro">1. Overview</a></h3>
         <h3><a href="#data">2. Data & Tools</a></h3>
         <h3><a href="#Preprocessing">3.  Data Preprocessing</a></h3>
-        <h3><a href="#Findings">4. Findings</a></h3>
+        <h3><a href="#Findings">4. Demo</a></h3>
         <h3><a href="#Challenges">5. Challenges</a></h3>
-        <h3><a href="#Conclusion">6. Conclusion</a></h3>
     </div>
 
 
     <div id="intro"> 
       <h2>1. Overview</h2>
+      <img src="../imgs2/restaurant_ML/bakery_header.png" alt="">
+
+      <p>
+        I worked part-time as a pastry cook in a bakery/restauarant. I noticed we were manually guessing how much
+        of each item to bake each day and subsequently how much of each ingredient to order. I saw several hundred 
+        croissants thrown out over the course of my time and sought to combine my degree with my part-time job to minimize 
+        food waste and increase margins. <br> <br>
+      </p>
+
+      <h3>Project Goals: </h3>
           <p> 
+            To create a predictive algorithm that could anticipate the daily sales of key menu items to:  <br>
             
+            - Minimize food waste <br>
+            - Anticipate ingredient purchasing<br>
+            - Better predict staffing needs<br>
       </p>
   </div>
 
   <div id="data"> 
     <h2>2. Data & Tools</h2>
-
-    <p>
-     
+           <h3>Data</h3> 
+           <div class="two-col"> 
+      <div>
+      <h4>Restaurant Data</h4>
+      <p>
+      - 350+ individual CSV's of daily aggregated sales data <br>
+      - each file included columns with each product, the number of sales, and total sale amount in $ <br>
+      <br>
+    </div>
+    <div>
+      </p>
+      <h4>Weather API</h4>
+      <p>
+      - Temperature (hour by hour high and low) <br>
+      - Weather condition by hour (sunny, windy, cloudy, partially cloudy, rainy, hailing, etc.)
     </p>
-        
+  </div>
+</div>
 
+        <h3>Tools </h3>
+          <h4>Jupyter Notebook <br></h4>
+          <h4>Python</h4>
+          <h4>Libraries</h4>
+          <p> &emsp;&emsp; Sklearn, Pandas, Numpy, Datetime,  Tqdm <br>
+          </p>
+          <h4>Weather API <br></h4>
+
+        </p>
   </div>
 
   <div id="Preprocessing">
     <h2>3. Data Preprocessing</h2>
-    
+    <div class="three-col">  
+      <div>
+      <h4>Restaurant Data</h4>
+      <p>
+    - Reformat column headers <br>
+    - Convert Dates to Datetime objects <br>
+    - Remove placeholder columns <br>
+    - Remove columns with no data <br>
+    - Create Categorical Variables for Days of Week  <br>
+    <p>
+    </div>
+    <div>
+    <h4>Weather API </h4>
+    <p>
+    - Gather daily high and low (from high and low over 24 hours)
+    - Gather % Sunny, Precipitation, Cloudy, or Other (ie. Extreme Wind, Tornado)
+    </p>
+  </div>
+  <div>
+    <h4>Gameday</h4>
+    <p>
+    - Identify if the day in question was a gameday or not (binary)
+    </p>
+  </div>
+  </div>
+
+    <h3>Evaluation Metric</h3>
+    <p>
+    We wanted to create our own evaluation metric. The given evaluation rms uses the distance the predicted estimate 
+    is from the true value squared. This means that estimates that are above and below the true value are treated equally.
+    <br> In a kitchen, it is more cost efficient to make more items than are sold but fulfill all customers' desires than it is 
+    to not make enough items and lose out on sales. Therefore, we wanted to create an evaluation metric that 
+    prioritized algorithms that over-estimated more than they under-estimated while still trying to preserve accuracy.
+    <br> <br>
+    To do this, we created an evaluation metric that utilizes the function below: 
+    <img src="../imgs2/restaurant_ML/eval_metric_code.png" alt=" code for evaluation metric">
+    <br>
+    <br>
+    This metric penalizes under-estimates more than over-estimates by the multiplier variable <i>alpha</i>. If alpha is 1.2, 
+    then under estimates are penalized 20% more than over-estimates. 
+
+  </p>
   </div>
 
 
 
   <div id="Findings">
-    <h2>4. Findings</h2>
+    <h2>4. Final Model</h2>
+    <h3>Feature Selection</h3>
+     <p>
+       We tried 3 variations of features:
+       - Sales of Previous Day
+       - Weekday
+       - Weekday, Gameaday, Weather & Temperature 
+       We found that the combination of Weekday, Gameday, Weather and Temperature was the most precise combination of features. 
+     </p>
 
+
+    <h3>Model Selection</h3>
+    <p>While performance among other model types was marginally better (EVIDENCE HERE), it was important that 
+      this prediction model could be used.  The client didn't have access to someone who could regularly run and interpret a 
+      python file. For this reason, we needed to train our model with an algorithm that could be extrapolated to an excel file: a medium that 
+      the client was familiar with.
+      </p>
+      <h4>Models Tried</h4>
+
+      <p>
+        Given the small amount of data available, we used a 5 fold kfold approach to test each model. We used the average of each evaluation metric
+        of each fold to find the best model. The models tried were: 
+        - SVR
+        - MLP Regression
+        - Linear Regression 
+
+      </p>
+
+      <p>
+      <br>
+      Linear models produced results with extreme coefficients. To account for these coefficients, we used a ridge regression to penalize high-coefficient 
+      models.  
+      
+    </p>
+
+    </p>
 
   </div>
+
 
 
   <div id="Challenges">
-    <h2>5. Challenges</h2>
+    <h2>5. Demo</h2>
 
-
-
-  </div>
-
-  <div id="Conclusion">
-    <h2>6. Conclusion</h2>
-    <h3>What I Learned</h3>
-    <p>I strengthened my confidence with Python <br> <br>
-      I strengthened my comfort with data visualization in python  <br> <br>
-      I strengthened comfort accessing API’s <br> <br>
-      I refreshed my knowledge on Network analytics and properties<br> <br>
-      I learned Tableau <br> <br>
-      I made my first dashboard
+    <img src="../imgs2/restaurant_ML/Boro_model_demo.gif" alt="">
+    <p>The interactive model allows a user to input 7 criteria that the model then uses to predict sales of high-grossing 
+      menu items. <br>
       <br> <br>
-      </p>
+      <i>Day of week</i>  is the string input for the day of the week
+      <br><br>
+      <i>% Weather</i>  requires weather forecasts prediction for precipitation, sun, or other (ie tornado) weather events for the day of question. Guesstimates can
+      be utilized when forecasting far into the future. The total of all of these values must equal 100%
+      <br><br>
+      <i>Temperature High & Low</i>  is the temperature in farenheight that represents the highest temperature on the day in question and the lowest temperature
+      on the day in question respectively.
+      <br> <br>
+      <i>Game Day?</i>  asks, in binary, if the given day is a University of Michigan game day. If yes, the user inputs 1, if no, the user inputs 0. 
+
+    </p>
+
+
   </div>
+
+  
 
 
 
